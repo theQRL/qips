@@ -1,4 +1,3 @@
-# qips
 ==QRL improvement proposals (QIPS) ==
 
 Following mainnet-launch, any significant design changes must pass through a QIP process, prior to being implemented in release code.
