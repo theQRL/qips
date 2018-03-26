@@ -1,2 +1,0 @@
-# qips
-QRL improvement proposals

@@ -1,0 +1,9 @@
+# qips
+==QRL improvement proposals (QIPS) ==
+
+Following mainnet-launch, any significant design changes must pass through a QIP process, prior to being implemented in release code.
+
+Please discuss your improvement ideas with the team prior to submitting here as a fully formed QIP proposal. We are a friendly bunch and likely to approve useful and innovative suggestions.
+
+info@theqrl.org
+
