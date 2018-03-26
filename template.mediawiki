@@ -1,0 +1,24 @@
+<pre>
+  QIP: 
+  Layer: 
+  Title: 
+  Author: 
+  Comments-Summary: 
+  Comments-URI: 
+  Status: 
+  Type: 
+  Created: 
+</pre>
+
+==Abstract==
+
+
+==Motivation==
+
+
+==Specification==
+
+
+==Backward compatibility==
+
+==Implementation==
