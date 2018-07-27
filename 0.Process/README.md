@@ -1,5 +1,3 @@
-{{TOC}}
-
 # Introduction
 
 Following mainnet-launch, any significant design changes must pass through a QIP process, prior to being implemented in release code. We are a friendly bunch and likely to approve useful and innovative suggestions. 
