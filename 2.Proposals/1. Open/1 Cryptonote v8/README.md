@@ -3,9 +3,9 @@
 	Title: Migrate to Cryptonote v8
 	Author: Andrew Chiw
 	Comments-Summary: 
-	Comments-URI: 
-	Status: 
-	Type: 
+	Comments-URI: https://github.com/theQRL/qips/pull/2
+	Status: Open
+	Type: Mining
 	Created: 2018-10-30
 # QIP 1: Migrate to Cryptonote v8 (Cryptonote Variant 2)
 
