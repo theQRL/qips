@@ -54,7 +54,7 @@ Subsequent Half Byte: `1`, `2`, or `3` indicating which hash function has been u
 The remaining 77 bytes are reserved for both the hash of the document, and a variable amount of free form text depending which hash function was use. For each hash function above, the following describes the remaining 77 bytes utilisation.
 
     `1` - SHA1 - Subsequent 20 bytes store the SHA1 hash, with the remaining 57 bytes available for free form text.
-    `2` - SHA256 - Subsequent 32 bytes store the SHA1 hash, with the remaining 45 bytes available for free form text.
+    `2` - SHA256 - Subsequent 32 bytes store the SHA256 hash, with the remaining 45 bytes available for free form text.
     `3` - MD5 - Subsequent 16 bytes store the SHA1 hash, with the remaining 61 bytes available for free form text.
 
 ## Backward compatibility
