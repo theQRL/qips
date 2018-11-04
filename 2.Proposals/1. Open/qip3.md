@@ -1,4 +1,4 @@
-QIP: 
+	QIP: 
 	Layer: qrl-node, webwallet
 	Title: Extended address functionality from master XMSS wallet
 	Author: Peter Waterland, Kaushal Singh
@@ -8,7 +8,7 @@ QIP:
 	Type: improvement
 	Created: 4/11/2018
 
-{{TOC}}
+
 
 # Title
 Extended address functionality from master XMSS wallet
