@@ -25,7 +25,7 @@ However, it would be valuable for users to have access to more than one address 
 
 A 51 byte unique seed is used to generate a user wallet in the node or webwallet. The first three bytes are extended seed encoding with the following 48 bytes of random entropy providing the cryptographic seed used in PRF generation of the XMSS tree and subsequent master address.
 
-In addition to the master XMSS tree, the 48 byte random seed may, in a cryptographically secure fashion, be used to generate a deterministic sequence of pseudorandom 32 byte values. This sequence can be trivially generated computationally yet retain the appearance of uniform random output when revealed to an external observer. Furthermore, the seed may not be determined using any of all of the PRF sequence values.
+In addition to the master XMSS tree, the 48 byte random seed may, in a cryptographically secure fashion, be used to generate a deterministic sequence of pseudorandom 32 byte values. This sequence can be trivially generated computationally yet retain the appearance of uniform random output when revealed to an external observer. Furthermore, the seed may not be determined using any or all of the PRF sequence values.
 
 Example solution:
 
