@@ -62,11 +62,13 @@ For ease the address `encoding_bytes` must match the master address XMSS tree en
 
 ## Change addresses
 
-QRL uses re-usable addresses. An example transaction may move part of the funds from address `a` to `b`. After such a standard transfer transaction an outside observer can see precisely what funds remain in the user controlled master address `a`. The addition of multiple deterministic addresses to a master address means that the following is now possible: all funds may move from `a` to `b`, `c` and perhaps `d`. The balance of a is now zero, and an outside observer will not know that some funds were moved to address `b` and that the user controlling `a` actually controls the addresses `c` and `d`. Whilst the effective final balances of the two users in the transfer transaction remain the same -- to an outside observer the precise movements and control of funds are obfuscated.
+QRL uses re-usable addresses. An example transaction may move part of the funds from address `a` to `b`. After such a standard transfer transaction an outside observer can see precisely what funds remain in the user controlled master address `a`. 
+The addition of multiple deterministic addresses to a master address means that the following is now possible: all funds may move from `a` to `b`, `c` and perhaps `d`. The balance of `a` is now zero, and an outside observer will not know that some funds were moved to address `b` and that the user controlling `a` actually controls the addresses `c` and `d`. 
+Whilst the effective final balances of the two users in the transfer transaction remain the same -- to an outside observer the precise movements and control of funds are obfuscated.
 
 ## Backwards compatibility
 
-Optional fields (`.extended_pk_address_prf` and `.extended_pk_address_user`) to be concatenated and hashed with pk must be added into the transaction logic in the base `Transaction` class. Minor state changes to associate extended addresses with existing master address pk's following a spend transaction (to preserve OTS safety). 
+Optional fields (`.extended_pk_address_prf` and `.extended_pk_address_user`) to be concatenated and hashed with pk must be added into the transaction logic in the base `Transaction` class. Minor state changes required to associate extended addresses with existing master address pk's following a spend transaction (to preserve OTS safety). 
 
 Higher level changes required in terms of tracking, displaying balances and allowing spend functionality from within the webwallet. This latter point will require internal discussion.
 
