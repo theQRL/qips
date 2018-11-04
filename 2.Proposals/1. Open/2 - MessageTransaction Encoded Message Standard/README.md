@@ -59,7 +59,7 @@ The remaining 77 bytes are reserved for both the hash of the document, and a var
 
 ## Backward compatibility
 
-The original `Document Notarisaion` transaction type contained only a half byte of information to indicate the transaction type the encoded message contained. This unfortunately was a design oversight that limited that maximum unique message transaction sub types to 16 globally. To ensure this transaction type continues to function within the context of this QIP, and that the message encoding standard can contain a larger number of transaction subtypes, an exception must be made to limit the ability for new transaction sub types to start with the hex string `A`.
+The original `Document Notarisation` transaction type contained only a half byte of information to indicate the transaction type the encoded message contained. This unfortunately was a design oversight that limited that maximum unique message transaction sub types to 16 globally. To ensure this transaction type continues to function within the context of this QIP, and that the message encoding standard can contain a larger number of transaction subtypes, an exception must be made to limit the ability for new transaction sub types to start with the hex string `A`.
 
 ## Implementation
 
