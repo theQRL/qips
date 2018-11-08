@@ -35,7 +35,7 @@ The subsequent one byte should indicate a unique encoded message transaction typ
 
 Eg: `00`, `B0` etc.
 
-The remaining sixty-seven bytes contain any data relevant to the encoded message, and should be proposed to the community through a QIP. 
+The remaining 77 bytes contain any data relevant to the encoded message, and should be proposed to the community through a QIP. 
 
 If this QIP is accepted, a record of accepted message transaction sub type and their respective QIP should be kept updated on [docs.theqrl.org](https://github.com/theQRL/docs.theqrl.org) such that client implementations have the technical detail available to implement with ease.
 
