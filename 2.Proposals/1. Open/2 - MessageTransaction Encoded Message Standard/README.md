@@ -3,7 +3,7 @@
 	Title: MessageTransaction Encoded Message Standard
 	Author: Scott Donald
 	Comments-Summary: 
-	Comments-URI: 
+	Comments-URI: https://github.com/theQRL/qips/pull/4
 	Status: Open
 	Type: Proposal
 	Created: 03 November 2018
