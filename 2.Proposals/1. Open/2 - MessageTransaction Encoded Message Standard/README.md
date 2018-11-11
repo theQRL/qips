@@ -1,4 +1,4 @@
-	QIP: TBA
+	QIP: 002
 	Layer: 2
 	Title: MessageTransaction Encoded Message Standard
 	Author: Scott Donald
@@ -7,6 +7,7 @@
 	Status: Open
 	Type: Proposal
 	Created: 03 November 2018
+	Updated: 12 November 2018
 
 # A standard message encoding format to indicate encoded data in MessageTransaction transactions
 
@@ -19,29 +20,30 @@ There is the capability for second layer clients to read and interpret the data 
 
 ## Motivation
 
-This QIP aims to solidify the pre-existing message encoding standard such that other encoded messages have a base layer to build upon, such as the [coinvote](https://github.com/theQRL/qips/pull/2#issuecomment-434810654) proposal mentioned by @surg0r.
+This QIP aims to create a new base layer for a standard message encoding format such that other usecases have a framework to build within - for example the [coinvote](https://github.com/theQRL/qips/pull/2#issuecomment-434810654) proposal mentioned by @surg0r.
 
 ## Specification
 
-The following will describe the base requirements to indicate a message contains encoded data, and provide further context on actual usage as has been implemented in the `Document Notarisation` transaction type.
+The following will describe the base requirements to indicate a message contains encoded data, and provide further context on earlier usage as has been implemented in the `Document Notarisation` transaction type.
 
 There are a total of 80 bytes available in a MessageTransaction transaction that are usable. For the purposes of describing the format in this document, we will represent all data as HEX strings. It is worth noting however that the data is later converted to binary bytes for storage by a QRL node.
 
 To indicate a message is an encoded message, the first two bytes are reserved for the following HEX string:
 
-`AFAF`
+`0F0F`
 
-The subsequent one byte should indicate a unique encoded message transaction type, that for [historical reasons](#backward-compatibility) should _not_ start with the HEX string `A`. Each proposal to the community for a new encoded message type will be allocated a unique HEX string for this byte for client implementations.
+The subsequent two bytes should indicate a unique encoded message transaction type. Each proposal to the community for a new encoded message type will be allocated a unique HEX string for these bytes for client implementations.
 
-Eg: `00`, `B0` etc.
+Eg: `0001`, `AA01` etc.
 
-The remaining 77 bytes contain any data relevant to the encoded message, and should be proposed to the community through a QIP. 
+The remaining 76 bytes contain any data relevant to the encoded message, and should be proposed to the community through a QIP.
 
-If this QIP is accepted, a record of accepted message transaction sub type and their respective QIP should be kept updated on [docs.theqrl.org](https://github.com/theQRL/docs.theqrl.org) such that client implementations have the technical detail available to implement with ease.
+If this QIP is accepted, a record of accepted message transaction sub type and their respective QIP should be kept updated on [docs.theqrl.org](https://github.com/theQRL/docs.theqrl.org) such that client implementations have the technical detail available to implement with ease. A Github repository will be setup on https://github.com/theQRL/standard-message-encoding to allow community pull requests into this standard encoding format.
+
 
 #### Document Notarisation Specification
 
-The following describes the structure of the `Document Notarisation` message transaction sub type for historical purposes.
+The following describes the structure of the `Document Notarisation` message transaction sub type for historical purposes. There are approximately 25 transactions from early stages of the network that utilise this format. It is optional to implement for display purposes.
 
 First 2 Bytes: `AFAF` - Indicates encoded message.
 Subsequent Half Byte: `A` - Indicates this is a document notarisation message transaction sub type.
@@ -57,10 +59,9 @@ The remaining 77 bytes are reserved for both the hash of the document, and a var
     `2` - SHA256 - Subsequent 32 bytes store the SHA256 hash, with the remaining 45 bytes available for free form text.
     `3` - MD5 - Subsequent 16 bytes store the SHA1 hash, with the remaining 61 bytes available for free form text.
 
-## Backward compatibility
-
-The original `Document Notarisation` transaction type contained only a half byte of information to indicate the transaction type the encoded message contained. This unfortunately was a design oversight that limited that maximum unique message transaction sub types to 16 globally. To ensure this transaction type continues to function within the context of this QIP, and that the message encoding standard can contain a larger number of transaction subtypes, an exception must be made to limit the ability for new transaction sub types to start with the hex string `A`.
-
 ## Implementation
 
-No implementation work is required for this QIP as it simply states a standard for encoding messages using the QRL networks `MessageTransaction` transaction type.
+No immediate implementation work is required for this QIP as it simply states a standard for encoding messages using the QRL networks `MessageTransaction` transaction type.
+
+Eventual work will be required in any client implementations that wish to adhere to the standard encoding format, such as the public [QRL Wallet](https://wallet.theqrl.org/) or [Block Explorer](https://explorer.theqrl.org/)
+
