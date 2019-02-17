@@ -3,7 +3,7 @@
 	Title: Multi-Signature Wallet
 	Author: Kaushal Singh, Peter Waterland
 	Comments-Summary: 
-	Comments-URI: 
+	Comments-URI: https://github.com/theQRL/qips/pull/7
 	Status: Open
 	Type: Proposal
 	Created: 11 February 2019
