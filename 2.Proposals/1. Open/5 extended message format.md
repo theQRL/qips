@@ -4,7 +4,7 @@
   Title: Extending message transaction functionality 
   Author: Peter Waterland
   Comments-Summary: 
-  Comments-URI: 
+  Comments-URI: https://github.com/theQRL/qips/pull/8
   Status: draft
   Type: 
   Created: 21/02/2019
