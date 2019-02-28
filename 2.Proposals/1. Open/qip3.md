@@ -3,7 +3,7 @@
 	Title: Extended address functionality from master XMSS wallet
 	Author: Peter Waterland, Kaushal Singh
 	Comments-Summary: 
-	Comments-URI: 
+	Comments-URI: https://github.com/theQRL/qips/pull/5
 	Status: draft
 	Type: improvement
 	Created: 4/11/2018
