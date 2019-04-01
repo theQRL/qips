@@ -20,13 +20,15 @@ Proposals under discussion will be considered at the next QRL Developer meeting.
 
 ### 3a. Accepted
 
-Accepted proposals require development until such a point when they are released or they are ready for release at the next hard fork of the network.  As such, an accepted QIP may be in one of three states:
+Accepted proposals require development until such a point when they are released or they are ready for release at the next hard fork of the network.  As such, an accepted QIP may be in one of four states:
 
-1. In development
+1. Available (for a developer/team to take on engineering the QIP; avoiding duplication of effort)
 
-2. Awaiting hard fork
+2. In development
 
-3. Completed
+3. Awaiting hard fork
+
+4. Completed
 
 ### 3b. Deferred
 
