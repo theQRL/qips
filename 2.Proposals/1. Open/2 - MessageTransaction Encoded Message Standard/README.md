@@ -6,8 +6,8 @@
 	Comments-URI: https://github.com/theQRL/qips/pull/4
 	Status: Open
 	Type: Proposal
-	Created: 03 November 2018
-	Updated: 12 November 2018
+	Created: 2018-11-03
+	Updated: 2018-11-12
 
 # A standard message encoding format to indicate encoded data in MessageTransaction transactions
 

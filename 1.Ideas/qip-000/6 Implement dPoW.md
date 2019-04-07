@@ -3,10 +3,10 @@
 	Title: Implement dPoW
 	Author: Machin
 	Comments-Summary: 
-	Comments-URI: 
+	Comments-URI: https://github.com/theQRL/qips/pull/10
 	Status: draft
 	Type: Proposal
-	Created: 27 march 2019
+	Created: 2019-03-27
 
 {{TOC}}
 
