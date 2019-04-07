@@ -6,7 +6,7 @@
 	Comments-URI: https://github.com/theQRL/qips/pull/5
 	Status: draft
 	Type: improvement
-	Created: 4/11/2018
+	Created: 2018-11-04
 
 
 

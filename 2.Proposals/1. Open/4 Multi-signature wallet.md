@@ -6,7 +6,7 @@
 	Comments-URI: https://github.com/theQRL/qips/pull/7
 	Status: Open
 	Type: Proposal
-	Created: 11 February 2019
+	Created: 2019-02-11
 
 # Multi-Signature Wallet 
 
