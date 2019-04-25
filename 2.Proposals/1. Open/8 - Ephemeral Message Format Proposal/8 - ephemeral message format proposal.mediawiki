@@ -41,9 +41,9 @@ The '''payload''' is the body of the message containing user data. The precise c
 
 '''TTL''' is a 32 bit network expiry timestamp following unix time specification. This 'time to live' value is a timestamp upon which the network renders the message invalid and proceeds with deletion. Whilst messages are relayed across the network by agreeable nodes they are only held transiently until they expire - hence 'ephemeral'. Alternatively, this could be replaced with a blockheight?
 
-A 32 byte QRL '''block-header hash''' must be supplied as a rough message timestamp. In combination with POW this prevents a determined attacker grinding out a huge number of messages over a long period of time which are then used to flood the network.
+The first 4 bytes of a recent QRL '''block-header hash''' must be supplied as a rough message timestamp. The chance of a random 4 byte guess being successful is 1 in 2^32/allowed_ephemeral_message_blockdepth. In combination with POW this prevents a determined attacker grinding out a huge number of messages over a long period of time which are then used to flood the network.
 
-'''POW'''. Any broadcast protocol is susceptible to spam and each message passed through the network will require a variable amount of 'work' to be performed and verified via a supplied pow hash prepended by a byte pow algorithm identifier. This adds a small amount of computation time to confirm message validity. Furthermore, the amount of work required is linked to the TTL expiry timestamp - the longer the shelf-life of the message, the greater work must be expended to attain validity.
+'''POW'''. Any broadcast protocol is susceptible to spam and each message passed through the network will require a variable amount of 'work' to be performed and verified via a supplied pow hash prepended by a byte pow algorithm identifier. This adds a small amount of computation time to confirm message validity. Furthermore, the amount of work required is linked to the TTL expiry timestamp - the longer the shelf-life of the message, the greater work must be expended to attain validity. The pow is performed on a cryptographic hash digest of the message (SHA2_256), with the resultant pow hash (and prepended byte) appended as the final field of the message. 
 
 
 
