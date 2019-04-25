@@ -3,10 +3,10 @@
 	Title: Support Tokenization of Securities
 	Author: IMac318
 	Comments-Summary: 
-	Comments-URI: 
+	Comments-URI: https://github.com/theQRL/qips/pull/15
 	Status: 
 	Type: 
-	Created: 04/19/2019
+	Created: 2019-04-19
 
 {{TOC}}
 
