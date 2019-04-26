@@ -1,7 +1,7 @@
 QIP: 008
 Layer: qrl-node
 Title: Ephemeral message format proposal
-Author: Kaushal Singh, Peter Waterland
+Author: Peter Waterland, Kaushal Singh
 Comments-Summary: 
 Comments-URI: https://github.com/theQRL/qips/pull/17
 Status: draft
