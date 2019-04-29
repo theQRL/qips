@@ -33,7 +33,7 @@ This repo is structured as per this diagram:
 [12]:https://github.com/theQRL/qips/pull/10
 [13]:https://github.com/theQRL/qips/tree/master/2.Proposals/1.%20Open/7%20-%20Support%20Tokenization%20of%20Securities
 [14]:https://github.com/theQRL/qips/pull/15
-[15]:https://github.com/theQRL/qips/blob/master/2.Proposals/1.%20Open/8%20-%20Ephemeral%20Message%20Format%20Proposal/8%20-%20ephemeral%20message%20format%20proposal.mediawiki
+[15]:https://github.com/theQRL/qips/blob/master/2.Proposals/1.%20Open/8%20-%20Ephemeral%20Message%20Format%20Proposal/8%20-%20ephemeral%20message%20format%20proposal.md
 [16]:https://github.com/theQRL/qips/pull/17
 
 
