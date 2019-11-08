@@ -15,7 +15,7 @@ Change Mining Algorithm to RandomX
 ## Abstract
 
 [RandomX](https://github.com/tevador/RandomX) is a proof-of-work algorithm that aims to achieve longer-term ASIC resistance than the current CryptoNight-based tweaks.
-It will be used in the Monero blockchain after their next upgrade. It has been [audited](https://github.com/hyc/RandomxAudits/blob/master/Report-X41-20190705.pdf) by the people (x41) who audited the QRL cryptography.
+It will be used in the Monero blockchain after their next upgrade. It has been [audited](https://ostif.org/four-audits-of-randomx-for-monero-and-arweave-have-been-completed-results/) by the people (x41) who audited the QRL cryptography.
 
 From [reddit thread](https://www.reddit.com/r/Monero/comments/aovypq/randomx_asic_resistant_pow_community_feedback/) announcing it: "RandomX is a proof-of-work (PoW) algorithm that is optimized for general-purpose CPUs. RandomX uses random code execution (hence the name) together with several memory-hard techniques to minimize the efficiency advantage of specialized hardware."
 
