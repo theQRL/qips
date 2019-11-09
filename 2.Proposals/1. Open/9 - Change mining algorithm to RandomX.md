@@ -32,7 +32,7 @@ To be determined by team if accepted.
 
 ## Backward compatibility
 
-Beyond my knowledge.
+Changing the mining algorithm is a hard fork upgrade. 
 
 
 ## Implementation
