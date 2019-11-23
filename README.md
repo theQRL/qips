@@ -16,6 +16,8 @@ This repo is structured as per this diagram:
 | [QIP006: Implement dPoW ][11] | Idea | Draft | [QIP006 comments][12] |
 | [QIP007: Support Tokenization of Securities ][13] | Proposal | Open | [QIP007 comments][14] |
 | [QIP008: Ephemeral message format proposal ][15] | Proposal | Open Draft | [QIP008 comments][16] |
+| [QIP009: Change mining algorithm to RandomX ][17] | Proposal | Open Draft | [QIP009 comments][18] |
+| [QIP010: Quanta emission change to 2 Quanta per minute ][19] | Proposal | Open Draft | [QIP010 comments][20] |
 
 
 
@@ -35,6 +37,8 @@ This repo is structured as per this diagram:
 [14]:https://github.com/theQRL/qips/pull/15
 [15]:https://github.com/theQRL/qips/blob/master/2.Proposals/1.%20Open/8%20-%20Ephemeral%20Message%20Format%20Proposal/8%20-%20ephemeral%20message%20format%20proposal.md
 [16]:https://github.com/theQRL/qips/pull/17
-
-
+[17]:https://github.com/theQRL/qips/pull/20/files#diff-1feb8c14d98a34fd4d30a29336422fa5
+[18]:https://github.com/theQRL/qips/pull/20
+[19]:https://github.com/theQRL/qips/blob/eaad8c8533c2e3b2346417317c17268977e6db20/Change%20Quanta%20emission%20to%202/test
+[20]:https://github.com/theQRL/qips/pull/21
 info@theqrl.org
