@@ -6,18 +6,20 @@ This repo is structured as per this diagram:
 
 ![Repo map](./repo_outline.svg)
 
+An idea for a network/protocol improvement should remain in ideas (incomplete) until fleshed out and ready for community decision on whether to proceed.  Once this point is reached, it is moved to 'Under discussion' until a community decision is made on outcome based on discussions as linked.
+
 | QIP            | Type | Status      | Comments  |
 | -------------|:-------------:|:-------------:|:-----:|
-| [QIP001: Migration to Cryptonote v8][1] | Proposal | Open | [QIP001 comments][2] |
-| [QIP002: MessageTransaction Encoded Message Standard][3] | Proposal | Open | [QIP002 comments][4] |
-| [QIP003: Extended address functionality from master XMSS wallet][5] | Proposal | Open Draft | [QIP003 comments][6] |
-| [QIP004: Multi-Signature Wallet][7] | Proposal | Open | [QIP004 comments][8] |
-| [QIP005: Extending message transaction functionality ][9] | Proposal | Open Draft | [QIP005 comments][10] |
-| [QIP006: Implement dPoW ][11] | Idea | Draft | [QIP006 comments][12] |
-| [QIP007: Support Tokenization of Securities ][13] | Proposal | Open | [QIP007 comments][14] |
-| [QIP008: Ephemeral message format proposal ][15] | Proposal | Open Draft | [QIP008 comments][16] |
-| [QIP009: Change mining algorithm to RandomX ][17] | Proposal | Open Draft | [QIP009 comments][18] |
-| [QIP010: Quanta emission change to 2 Quanta per minute ][19] | Proposal | Open Draft | [QIP010 comments][20] |
+| [QIP001: Migration to Cryptonote v8][1] | Proposal | Rejected | [QIP001 comments][2] |
+| [QIP002: MessageTransaction Encoded Message Standard][3] | Proposal | Accepted [completed] | [QIP002 comments][4] |
+| [QIP003: Extended address functionality from master XMSS wallet][5] | Proposal | Accepted [completed] | [QIP003 comments][6] |
+| [QIP004: Multi-Signature Wallet][7] | Proposal | Accepted [Awaiting hard fork] | [QIP004 comments][8] |
+| [QIP005: Extending message transaction functionality ][9] | Proposal | Open | [QIP005 comments][10] |
+| [QIP006: Implement dPoW ][11] | Idea | Incomplete | [QIP006 comments][12] |
+| [QIP007: Support Tokenization of Securities ][13] | Proposal | Deferred | [QIP007 comments][14] |
+| [QIP008: Ephemeral message format proposal ][15] | Proposal | Open | [QIP008 comments][16] |
+| [QIP009: Change mining algorithm to RandomX ][17] | Proposal | Accepted [Awaiting hard fork] | [QIP009 comments][18] |
+| [QIP010: Quanta emission change to 2 Quanta per minute ][19] | Under discussion | Open Draft | [QIP010 comments][20] |
 
 
 
