@@ -3,7 +3,7 @@ Layer:
 Title: Denomination ideograms for Quanta and Shor as svg, webfonts
 Author: Jack Matier
 Comments-Summary: 
-Comments-URI: 
+Comments-URI: https://github.com/theQRL/qips/pull/23
 Status: draft
 Type: Proposal
 Created: 2020-01-16
