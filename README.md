@@ -26,6 +26,7 @@ decision is made on outcome based on discussions as linked.
 | [QIP011: Denomination ideograms for Quanta and Shor][21] | Idea | Incomplete | [QIP011 comments][22] |
 | [QIP012: Implementing transaction replay attack protection][23] | Idea | Incomplete | [QIP012 comments][24] |
 | [QIP013: Protection from fishing nodes][25] | Idea | Incomplete | [QIP013 comments][26] |
+| [QIP014: Non-fungible token (NFT) support][27] | Proposal | Open | [QIP014 comments][28] |
 
 
 
@@ -55,4 +56,6 @@ decision is made on outcome based on discussions as linked.
 [24]:https://github.com/theQRL/qips/commit/0d11ad6920bf074f918d4766ccbe65f4186dee2e
 [25]:1.Ideas/1.Incomplete/QIP013.md
 [26]:https://github.com/theQRL/qips/pull/26
+[27]:2.Proposals/1.Open/QIP014.md
+[28]:https://github.com/theQRL/qips/pull/28
 info@theqrl.org
