@@ -30,6 +30,7 @@ decision is made on outcome based on discussions as linked.
 
 
 
+
 [1]:2.Proposals/3c.Rejected/QIP001.md
 [2]:https://github.com/theQRL/qips/pull/2
 [3]:https://github.com/theQRL/qips/tree/master/2.Proposals/1.%20Open/2%20-%20MessageTransaction%20Encoded%20Message%20Standard
@@ -58,4 +59,5 @@ decision is made on outcome based on discussions as linked.
 [26]:https://github.com/theQRL/qips/pull/26
 [27]:2.Proposals/1.Open/QIP014.md
 [28]:https://github.com/theQRL/qips/pull/28
+
 info@theqrl.org
