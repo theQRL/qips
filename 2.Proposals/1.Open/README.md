@@ -7,7 +7,6 @@ comments-uri: https://github.com/theQRL/qips/pull/31
 status: proposal/open
 type: discussion
 created: 2021-05-09
----
 
 # Implement privacy feature
 
@@ -39,4 +38,4 @@ This will most likely require a hardfork.
 Bittrex doesn't allow privacy coins, this means that QRL will be removed from Bittrex. We have to find alternative exchanges.
 
 Other exchange(s):
-Binance, Tradeogre, Uniswap or other decentralized exchanges.```
+Binance, Tradeogre, Uniswap or other decentralized exchanges.
