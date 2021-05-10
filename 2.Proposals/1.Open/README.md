@@ -1,3 +1,4 @@
+---
 qip: 015
 layer: na
 title: "Implement privacy feature for QRL"
@@ -7,7 +8,7 @@ comments-uri: https://github.com/theQRL/qips/pull/31
 status: proposal/open
 type: discussion
 created: 2021-05-09
-
+---
 # Implement privacy feature
 
 ## Abstract
