@@ -27,6 +27,7 @@ decision is made on outcome based on discussions as linked.
 | [QIP012: Implementing transaction replay attack protection][23] | Idea | Incomplete | [QIP012 comments][24] |
 | [QIP013: Protection from fishing nodes][25] | Idea | Incomplete | [QIP013 comments][26] |
 | [QIP014: Non-fungible token (NFT) support][27] | Proposal | Open | [QIP014 comments][28] |
+| [QIP015: Reduce emissions rate of the network][29] | Proposal | Open | [QIP015 comments][30] |
 
 
 
@@ -59,5 +60,7 @@ decision is made on outcome based on discussions as linked.
 [26]:https://github.com/theQRL/qips/pull/26
 [27]:2.Proposals/1.Open/QIP014.md
 [28]:https://github.com/theQRL/qips/pull/28
+[29]:1.Ideas/1.Incomplete/QIP015.md
+[30]:https://github.com/theQRL/qips/pull/32
 
 info@theqrl.org
