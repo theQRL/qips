@@ -22,7 +22,7 @@ The foundation shall allocate the resources necessary to acquire 10MH of randomX
 Each miner must register a new wallet at the start of this event. This wallet may only receive mining output, validated by blockchain analysis. 
 After the first 90 days, the foundation will distribute 30% of the total funds in the wallet at that point in time to those miners, based on adding up the total number of coins across all wallets proportionately.
 After 180 days from the start of the event, the foundation will do the same with 50% of the total funds in the wallet at that point in time, using the same system to determine distribution.
-At the one year mark, or the release of pr  of stake, 90% of the total funds in the wallet at that point in time, using the same system to determine distribution.
+At the one year mark, or the release of proof of stake, 90% of the total funds in the wallet at that point in time, using the same system to determine distribution.
 Should a new participant wish to register at any point after the official launch, they shall only be able to participate in the final distribution should they have held funds for 180 days prior to the distribution date.
 
 ## Backward compatibility
