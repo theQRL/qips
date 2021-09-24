@@ -1,0 +1,28 @@
+<style type="text/css">
+  .eiptable .title {
+    width: 67%;
+  }
+
+  .eiptable .author {
+    width: 33%;
+  }
+</style>
+{% for status in site.data.statuses %}
+  {% assign qips = include.qips | where:"status",status|sort:"qip" %}
+  {% assign count = qips|size %}
+  {% if count > 0 %}
+    <h2 id="{{status|slugify}}">{{status}}</h2>
+    <table class="qiptable">
+      <thead>
+          <tr><th class="qipnum">Number</th><th class="title">Title</th><th class="author">Author(s)</th></tr>
+      </thead>
+      {% for page in qips %}
+        <tr>
+          <td class="eipnum"><a href="{{ page.url | relative_url }}">{{ page.qip | xml_escape }}</a></td>
+          <td class="title"><a href="{{ page.url | relative_url }}">{{ page.title | xml_escape}}</a></td>
+          <td class="author">{% include authorlist.html authors=page.author %}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% endif %}
+{% endfor %}
