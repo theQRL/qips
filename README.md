@@ -25,7 +25,7 @@ Please see the [qip-workflow](qip-workflow.md) for a detailed submission process
 
 Other important documents include:
 
-- [qips/reference](qip/reference.md): Reference QIP to duplicate and build off of.
+- [qips/reference](qips/reference.md): Reference QIP to duplicate and build off of.
 - [qip-template](qip-template.md): Includes a kitchen sink of everything that can be included in a QIP.
 - [qip-specification](qip-specification.md): Expands on the specification of each section.
 
