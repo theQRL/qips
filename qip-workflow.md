@@ -70,13 +70,7 @@ Thoroughly understanding all viewpoints will allow you to refine your draft into
 
 After a minimum of a two week period, and when you're ready for the draft to reach a proposal stage, put in a proposal request to the authors as part of the reference QIP. The QIP editors will then review the draft
 
-Assuming no adjustments are requested, the editors will evaluate and propose an on-chain governance specification which includes:
-
-1. Blockheight of snapshot
-2. Blockheight of vote
-3. Minimum vote threshold
-4. Minimum vote turnout
-5. Address(es) for vote outcomes
+Assuming no adjustments are requested, the editors will evaluate and propose an on-chain governance specification.
 
 At this point, the QIP will move from `draft/incomplete` to `proposal/open`.
 
@@ -90,7 +84,7 @@ Discussion will continue on the open proposal through to the final consensus blo
 
 Whether or not consensus is reached, a summary of the proposal is made and the discussion locked.
 
-If consensus is reached, the QIP will be slated development depending on resources available.
+If consensus is reached at it passes review, the QIP will be set as a recommendation and slated for development depending on resources available.
 
 # 3. Process Specification
 
