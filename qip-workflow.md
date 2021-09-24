@@ -64,7 +64,7 @@ Facilitate discussions and adjust your QIP in accordance with the discussions th
 
 While you're championing for your own QIP, skill will be required to keep discussions positive, forward-thinking, and in good faith in order to consider all viewpoints.
 
-This is your opportunity to understand these viewpoints to refine your draft into a proposal that's more likely to gain community consensus. 
+Thoroughly understanding all viewpoints will allow you to refine your draft into a proposal that's more likely to gain community consensus. 
 
 ## 2.3. Request for proposal
 

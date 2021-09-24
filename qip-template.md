@@ -37,7 +37,7 @@ The rationale fleshes out the specification by describing what motivated the des
 
 ## Backward compatibility
 
-All QIPs that introduce backwards incompatibilities must include a section describing these incompatibilities and their severity. The EIP must explain how the author proposes to deal with these incompatibilities. EIP submissions without a sufficient backwards compatibility treatise may be rejected outright.
+All QIPs that introduce backwards incompatibilities must include a section describing these incompatibilities and their severity. The QIP must explain how the author proposes to deal with these incompatibilities. QIP submissions without a sufficient backwards compatibility treatise may be rejected outright.
 
 ## Reference Implementation
 

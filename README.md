@@ -7,20 +7,19 @@ It covers the following layers
 - **core**: Improvements requiring a consensus fork.
   - **networking**: Improvements around network components
   - **security**: Improvements and upgrades to to the security.
-- **Interface**: Improvements around APIs
-- **Meta**: QIP Process, governance, structure.
+- **Meta**: QIP Process, governance, and structure.
 
 For proposals that don't effect most or all of QRL technical implementations, such as client implementations (eg. wallets, explorers), as well as non-technical related proposals (design, advocacy), but where consensus is required, there is a QRL Enhancement Program (QEP) being developed over at The QRL Contributors modeled after QIPs.
 
 # Governance & Structure
 
-Anyone can and is encouraged to submit a QRL Improvement Proposal if they have an idea to improve the QRL core protocol.
+Anyone can and is encouraged to submit a QRL Improvement Proposal (QIP) if they have an idea to improve the QRL core protocol.
 
-This QIP starts and remains as a draft until it's to the point where the authors are happy with it (such as where it will likely gain widest acceptance) and which is specified to the satisfaction of the QIP custodians Jack Matier (@jackalyst), and James Gordon (@fr1t2).  
+Once an idea is put by the community, the QRL Improvement Proposal (QIP) starts and remains as a draft until it's to the point where the authors are happy with it (such as where it will likely gain widest acceptance) and which is sufficiently specified to the satisfaction of the QIP custodians Jack Matier (@jackalyst), James Gordon (@fr1t2), and JP Lomas (@jplomas).  
 
-At this point the QIP enters a proposal, with a blockheight and consensus set for on-chain governance.
+At this point the QIP enters a proposal, and parameters are set for on-chain governance. More can be read in our '[qip-workflow](qip-workflow.md) document.
 
-# Submission Process
+# How to submit
 
 Please see the [qip-workflow](qip-workflow.md) for a detailed submission process guide.
 
