@@ -1,66 +1,36 @@
 # QRL improvement proposals (QIPs)
 
-Start with the [0. Process](./0.Process) folder
+The QRL Improvement Proposals (QIPs) repository handles proposals to improve the QRL core protocol and other layers that effects most or all QRL technical implementations. 
 
-This repo is structured as per this diagram:
+It covers the following layers
 
-![Repo map](./repo_outline.svg)
+- **core**: Improvements requiring a consensus fork.
+  - **networking**: Improvements around network components
+  - **security**: Improvements and upgrades to to the security.
+- **Meta**: QIP Process, governance, and structure.
 
-An idea for a network/protocol improvement should remain in ideas (incomplete)
-until fleshed out and ready for community decision on whether to proceed.
-Once this point is reached, it is moved to 'Under discussion' until a community
-decision is made on outcome based on discussions as linked.
+For proposals that don't effect most or all of QRL technical implementations, such as client implementations (eg. wallets, explorers), as well as non-technical related proposals (design, advocacy), but where consensus is required, there is a QRL Enhancement Program (QEP) being developed over at The QRL Contributors modeled after QIPs.
 
-| QIP            | Type | Status      | Comments  |
-| -------------|:-------------:|:-------------:|:-----:|
-| [QIP001: Migration to Cryptonote v8][1] | Proposal | Rejected | [QIP001 comments][2] |
-| [QIP002: MessageTransaction Encoded Message Standard][3] | Proposal | Accepted [completed] | [QIP002 comments][4] |
-| [QIP003: Extended address functionality from master XMSS wallet][5] | Proposal | Accepted [completed] | [QIP003 comments][6] |
-| [QIP004: Multi-Signature Wallet][7] | Proposal | Accepted [Awaiting hard fork] | [QIP004 comments][8] |
-| [QIP005: Extending message transaction functionality ][9] | Proposal | Open | [QIP005 comments][10] |
-| [QIP006: Implement dPoW ][11] | Idea | Incomplete | [QIP006 comments][12] |
-| [QIP007: Support Tokenization of Securities ][13] | Proposal | Deferred | [QIP007 comments][14] |
-| [QIP008: Ephemeral message format proposal ][15] | Proposal | Open | [QIP008 comments][16] |
-| [QIP009: Change mining algorithm to RandomX ][17] | Proposal | Accepted [Awaiting hard fork] | [QIP009 comments][18] |
-| [QIP010: Quanta emission change to 2 Quanta per minute ][19] | Under discussion | Open Draft | [QIP010 comments][20] |
-| [QIP011: Denomination ideograms for Quanta and Shor][21] | Idea | Incomplete | [QIP011 comments][22] |
-| [QIP012: Implementing transaction replay attack protection][23] | Idea | Incomplete | [QIP012 comments][24] |
-| [QIP013: Protection from fishing nodes][25] | Idea | Incomplete | [QIP013 comments][26] |
-| [QIP014: Non-fungible token (NFT) support][27] | Proposal | Open | [QIP014 comments][28] |
-| [QIP015: Reduce emissions rate of the network][29] | Proposal | Open | [QIP015 comments][30] |
+# Governance & Structure
 
+Anyone can and is encouraged to submit a QRL Improvement Proposal (QIP) if they have an idea to improve the QRL core protocol.
 
+Once an idea is put by the community, the QRL Improvement Proposal (QIP) starts and remains as a draft until it's to the point where the authors are happy with it (such as where it will likely gain widest acceptance) and which is sufficiently specified to the satisfaction of the QIP custodians Jack Matier (@jackalyst), James Gordon (@fr1t2), and JP Lomas (@jplomas).  
 
+At this point the QIP enters a proposal, and parameters are set for on-chain governance. More can be read in our '[qip-workflow](qip-workflow.md) document.
 
-[1]:2.Proposals/3c.Rejected/QIP001.md
-[2]:https://github.com/theQRL/qips/pull/2
-[3]:https://github.com/theQRL/qips/tree/master/2.Proposals/1.%20Open/2%20-%20MessageTransaction%20Encoded%20Message%20Standard
-[4]:https://github.com/theQRL/qips/pull/4
-[5]:https://github.com/theQRL/qips/blob/master/2.Proposals/1.%20Open/qip3.md
-[6]:https://github.com/theQRL/qips/pull/5
-[7]:https://github.com/theQRL/qips/blob/master/2.Proposals/1.%20Open/4%20Multi-signature%20wallet.md
-[8]:https://github.com/theQRL/qips/pull/7
-[9]:https://github.com/theQRL/qips/blob/master/2.Proposals/1.%20Open/5%20extended%20message%20format.md
-[10]:https://github.com/theQRL/qips/pull/8
-[11]:1.Ideas/1.Incomplete/QIP006.md
-[12]:https://github.com/theQRL/qips/pull/10
-[13]:https://github.com/theQRL/qips/tree/master/2.Proposals/1.%20Open/7%20-%20Support%20Tokenization%20of%20Securities
-[14]:https://github.com/theQRL/qips/pull/15
-[15]:https://github.com/theQRL/qips/blob/master/2.Proposals/1.%20Open/8%20-%20Ephemeral%20Message%20Format%20Proposal/8%20-%20ephemeral%20message%20format%20proposal.md
-[16]:https://github.com/theQRL/qips/pull/17
-[17]:https://github.com/theQRL/qips/pull/20/files#diff-1feb8c14d98a34fd4d30a29336422fa5
-[18]:https://github.com/theQRL/qips/pull/20
-[19]:https://github.com/theQRL/qips/blob/eaad8c8533c2e3b2346417317c17268977e6db20/Change%20Quanta%20emission%20to%202/test
-[20]:https://github.com/theQRL/qips/pull/21
-[21]:1.Ideas/1.Incomplete/QIP011.md
-[22]:https://github.com/theQRL/qips/pull/23
-[23]:1.Ideas/1.Incomplete/QIP012.md
-[24]:https://github.com/theQRL/qips/commit/0d11ad6920bf074f918d4766ccbe65f4186dee2e
-[25]:1.Ideas/1.Incomplete/QIP013.md
-[26]:https://github.com/theQRL/qips/pull/26
-[27]:2.Proposals/1.Open/QIP014.md
-[28]:https://github.com/theQRL/qips/pull/28
-[29]:1.Ideas/1.Incomplete/QIP015.md
-[30]:https://github.com/theQRL/qips/pull/32
+# How to submit
 
-info@theqrl.org
+Please see the [qip-workflow](qip-workflow.md) for a detailed submission process guide.
+
+Other important documents include:
+
+- [qips/reference](qips/reference.md): Reference QIP to duplicate and build off of.
+- [qip-template](qip-template.md): Includes a kitchen sink of everything that can be included in a QIP.
+- [qip-specification](qip-specification.md): Expands on the specification of each section.
+
+# Special thanks
+
+QRL Improvement Proposals (QIP) have been heavily influenced by Ethereum Improvement Proposals (EIPs) and Bitcoin Improvement Proposals (BIPs), with some modification in areas to fit the needs of the QRL project.
+
+A special thanks goes out to Ethereum and Bitcoin for being so seminal to blockchain and decentralized governance.

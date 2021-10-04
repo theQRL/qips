@@ -1,0 +1,41 @@
+title: QRL Improvement Proposals
+description: >-
+  QRL Improvement Proposals (QIPs) repository handles proposals 
+  to improve the QRL core protocol and other layers that effects 
+  most or all QRL technical implementations. 
+url: "https://www.theqrl.org"
+twitter_username: qrledger
+github_username:  theQRL
+header_pages:
+ - all.html
+twitter:
+  card: summary
+  username: qrledger
+highlighter: rouge
+markdown: kramdown
+theme: minima
+kramdown:
+  parse_block_html: false
+  auto_ids: true
+  auto_id_stripping: true
+  syntax_highlighter: rouge
+permalink: /:slug
+defaults:
+  -
+    scope:
+      path: "qips"
+    values:
+      layout: "qip"
+exclude:
+  - .github
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - qip-specification.md
+  - qip-template.md
+  - qip-workflow.md
+  - README.md

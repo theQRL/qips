@@ -1,1 +1,0 @@
-# Abandoned QIP Proposal Ideas

@@ -1,0 +1,4 @@
+{% assign qips=include.qips|split:"," %}
+{% for qipnum in qips %}
+  <a href="{{qipnum|strip|prepend:"eip-" }}">{{qipnum|strip}}</a>{% if forloop.last == false %}, {% endif %}
+{% endfor %}
