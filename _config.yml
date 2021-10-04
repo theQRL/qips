@@ -6,6 +6,7 @@ description: >-
 url: "https://www.theqrl.org"
 twitter_username: qrledger
 github_username:  theQRL
+repository: theqrl/qips
 header_pages:
  - all.html
 twitter:
