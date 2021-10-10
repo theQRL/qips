@@ -7,7 +7,7 @@ It covers the following layers
 - **core**: Improvements requiring a consensus fork.
   - **networking**: Improvements around network components
   - **security**: Improvements and upgrades to to the security.
-- **Meta**: QIP Process, governance, and structure.
+- **meta**: QIP process, governance, and structure.
 
 For proposals that don't effect most or all of QRL technical implementations, such as client implementations (eg. wallets, explorers), as well as non-technical related proposals (design, advocacy), but where consensus is required, there is a QRL Enhancement Program (QEP) being developed over at The QRL Contributors modeled after QIPs.
 
@@ -17,7 +17,7 @@ Anyone can and is encouraged to submit a QRL Improvement Proposal (QIP) if they 
 
 Once an idea is put by the community, the QRL Improvement Proposal (QIP) starts and remains as a draft until it's to the point where the authors are happy with it (such as where it will likely gain widest acceptance) and which is sufficiently specified to the satisfaction of the QIP custodians Jack Matier (@jackalyst), James Gordon (@fr1t2), and JP Lomas (@jplomas).  
 
-At this point the QIP enters a proposal, and parameters are set for on-chain governance. More can be read in our '[qip-workflow](qip-workflow.md) document.
+At this point the QIP enters a proposal, and parameters are set for on-chain governance. More can be read in our '[qip-workflow](qip-workflow.md)' document.
 
 # How to submit
 
