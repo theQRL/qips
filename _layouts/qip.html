@@ -17,9 +17,8 @@ layout: default
       <tr><th>Review period ends</th><td>{{ page.review-period-end | xml_escape }}</td></tr>
     {% endif %}
     </td></tr>
-    <tr><th>Type</th><td>{{ page.type | xml_escape }}</td></tr>
-    {% if page.category != undefined %}
-      <tr><th>Category</th><td>{{ page.category | xml_escape }}</td></tr>
+    {% if page.layer != undefined %}
+    <tr><th>Layer</th><td>{{ page.layer | xml_escape }}</td></tr>
     {% endif %}
     <tr><th>Created</th><td>{{ page.created | xml_escape }}</td></tr>
     {% if page.updated != undefined %}
