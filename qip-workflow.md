@@ -143,7 +143,7 @@ Examples:
 
 ### 3.2.2. Add anything needed from the specification
 
-Each QIP is preceded and specified by front-matter denoted between two sets of dashes "`---`", which allows for it to be easily parsed by other programs. For quick reference, a the [`qip-template.md`](./qip-template) can be used to fill out the frontmatter along with the reference copied in step 3.2.1.
+Each QIP is preceded and specified by front-matter denoted between two sets of dashes "`---`", which allows for it to be easily parsed by other programs. For quick reference, a the [`qip-template.md`](./qip-template.md) can be used to fill out the frontmatter along with the reference copied in step 3.2.1.
 
 A more detailed specification is outlined in the file [`qip-specification.md`](./qip-specification.md).
 
