@@ -7,6 +7,7 @@ status: <draft[/incomplete,/abandoned,/withdrawn], proposals[/open,/under_discus
 comments_uri: <to be assigned at pull request stage>
 comments_summary_uri: <to be assigned at proposals/(accepted, or rejected) stage> 
 created: <ISO 8601 creation date (yyyy-mm-dd)>
+updated: <ISO 8601 updated date (yyyy-mm-dd)>
 requires: <QIP number(s),> (optional)
 replaces: <QIP number(s),> (optional)
 superseded_by: <QIP number(s), URI> (optional)
@@ -31,7 +32,7 @@ The motivation section should describe the "why" of this QIP. What problem does 
 
 The technical specification should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow competing, interoperable implementations for any of the current QRL platforms to integrate.
 
-### Rationale
+## Rationale
 
 The rationale fleshes out the specification by describing what motivated the design and why particular design decisions were made. It should describe alternate designs that were considered and related work, e.g. how the feature is supported in other languages.
 
@@ -41,7 +42,7 @@ All QIPs that introduce backwards incompatibilities must include a section descr
 
 ## Reference Implementation
 
-An optional section that contains a reference/example implementation that people can use to assist in understanding or implementing this specification. If the implementation is too large to reasonably be included inline, then consider adding it as one or more files in
+An optional section that contains a reference/example implementation that people can use to assist in understanding or implementing this specification. If the implementation is too large to reasonably be included inline, then consider adding it as one or more files as under the qips directory named after your padded qip number (ie QIP001/) or including a link to your repository.
 
 ## Security Considerations
 

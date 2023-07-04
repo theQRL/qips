@@ -20,9 +20,10 @@
 - [6. Comments URI](#6-comments-uri)
 - [7. Comments URI Summary](#7-comments-uri-summary)
 - [8. Created](#8-created)
-- [9. Requires](#9-requires)
-- [10. Replaces](#10-replaces)
-- [11. Superseded By](#11-superseded-by)
+- [9. Modified](#9-modified)
+- [10. Requires](#10-requires)
+- [11. Replaces](#11-replaces)
+- [12. Superseded By](#12-superseded-by)
 
 # 1. QIP
 
@@ -119,7 +120,9 @@ The author of the QIP.
 
 # 5. Layer
 
-QRL Improvement Proposals consists of 
+QRL Improvement Proposals are for core improvements, either to the network or security layers. This can be described as `core`, `core/networking` or `core/security`. Most use `core`.
+
+There is also a `meta` layer, which is for structural changes to the QIP Process, governance, and structure.
 
 # 6. Comments URI
 
@@ -131,16 +134,20 @@ Full URI of the comment summary made after the proposals review process.
 
 # 8. Created
 
-Date that the draft was created
+Date that the draft was created.
 
-# 9. Requires
+# 9. Modified
+
+Date that the QIP was modified.
+
+# 10. Requires
 
 The QIPs that this QIP depends on, by UUID.
 
-# 10. Replaces
+# 11. Replaces
 
 The QIPs that this QIP replaces, by UUID
 
-# 11. Superseded By
+# 12. Superseded By
 
 The QIPs that supersedes 

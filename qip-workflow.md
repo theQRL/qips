@@ -111,7 +111,7 @@ git remote add upstream https://github.com/theQRL/qips
 For smoother editing, a local jekyll site can be built.
 
 1. Open terminal
-2. Install [rvenv](https://github.com/rbenv/rbenv), if you haven't done so already.
+2. Install [rbenv](https://github.com/rbenv/rbenv), if you haven't done so already.
 3. Install local Ruby version
 
 ```bash
