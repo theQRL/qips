@@ -106,9 +106,7 @@ duplication of effort)
 
 ### 3.2.4. Deferred
 
-Deferred proposals have merit to the project but for operational reasons are held
-back from entering development.  Deferred proposals may enter development at a
-later date or may move into a different category as the network matures.
+Deferred proposals have merit to the project but for operational reasons are held back from entering development.  Deferred proposals may enter development at a later date or may move into a different category as the network matures.
 
 ### 3.2.5. Rejected
 
@@ -122,7 +120,7 @@ The author of the QIP.
 
 QRL Improvement Proposals are for core improvements, either to the network or security layers. This can be described as `core`, `core/networking` or `core/security`. Most use `core`.
 
-There is also a `meta` layer, which is for structural changes to the QIP Process, governance, and structure.
+There is also a `meta` layer, which is for fundamental changes to the QIP Process, including its governance and structure.
 
 # 6. Comments URI
 
@@ -146,8 +144,8 @@ The QIPs that this QIP depends on, by UUID.
 
 # 11. Replaces
 
-The QIPs that this QIP replaces, by UUID
+The QIPs that this QIP replaces, by UUID.
 
 # 12. Superseded By
 
-The QIPs that supersedes 
+The QIPs that supersedes this QIP, by UUID.
