@@ -40,7 +40,7 @@ All QIPs that introduce backwards incompatibilities must include a section descr
 
 ## Reference Implementation
 
-An optional section that contains a reference/example implementation that people can use to assist in understanding or implementing this specification. If the implementation is too large to reasonably be included inline, then consider adding it as one or more files in
+An optional section that contains a reference/example implementation that people can use to assist in understanding or implementing this specification. If the implementation is too large to reasonably be included inline, then consider adding it as one or more files under the qips directory named after your padded qip number (ie QIP001/) or by including a link to your repository in this section.
 
 ## Security Considerations
 

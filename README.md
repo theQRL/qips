@@ -31,6 +31,6 @@ Other important documents include:
 
 # Special thanks
 
-QRL Improvement Proposals (QIP) have been heavily influenced by Ethereum Improvement Proposals (EIPs) and Bitcoin Improvement Proposals (BIPs), with some modification in areas to fit the needs of the QRL project.
+QRL Improvement Proposals (QIP) have been heavily influenced by [Ethereum Improvement Proposals (EIPs)](https://github.com/ethereum/EIPs/) and [Bitcoin Improvement Proposals (BIPs)](https://github.com/bitcoin/bips), with some modification in areas to fit the needs of the QRL project.
 
 A special thanks goes out to Ethereum and Bitcoin for being so seminal to blockchain and decentralized governance.

@@ -111,14 +111,14 @@ git remote add upstream https://github.com/theQRL/qips
 For smoother editing, a local jekyll site can be built.
 
 1. Open terminal
-2. Ensure that you have ruby installed
+2. Install [rbenv](https://github.com/rbenv/rbenv), if you haven't done so already.
+3. Install local Ruby version
 
 ```bash
-ruby --version
+rbenv install
 ```
 
-3. If you don't have ruby installed, install it.
-4. Install bundler
+4. Install the bundler
 
 ```bash
 gem install bundler
@@ -127,7 +127,14 @@ gem install bundler
 5. Install dependencies
 
 ```bash
+gem install bundler jekyll
 bundle install
+```
+
+6. Start the server!
+
+```bash
+bundle exec jekyll serve
 ```
 
 ## 3.2. Starting a draft
@@ -216,4 +223,4 @@ Head over to the [pull requests section of theQRL/qips](https://github.com/theQR
 
 # 4. Getting help
 
-If you're lost at anypoint during this process, feel free to reach out to the community on [Reddit](https://reddit.com/r/QRL), [Discord](https://www.theqrl.org/discord) or email QRL support at [support@theqrl.org](mailto:support@theqrl.org).
+If you're lost at any point during this process, feel free to reach out to the community on [Reddit](https://reddit.com/r/QRL), [Discord](https://www.theqrl.org/discord) or email QRL support at [support@theqrl.org](mailto:support@theqrl.org).
