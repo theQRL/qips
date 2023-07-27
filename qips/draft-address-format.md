@@ -6,12 +6,14 @@ layer: core
 status: "draft/incomplete"
 comments_uri: ~
 created: 2023-07-06
-modified: 2023-07-06
+modified: 2023-07-28
 ---
 
 ## Abstract
 
 The QRL wallet addresses are currently represented as 79 characters string. Such a long length has many disadvantages for its users. This QIP proposes use of more efficient encoding for address representation to make it shorter (64 characters) and user-friendly. It doesn't require any changes to the internal wallet format, therefore it doesn't affect internal APIs or security, and backwards compatibility is easily maintained.
+
+Since the QRL Zond testnet will have slightly different format of wallet addresses (but still using same encoding as now), it would be best to change the encoding as described in this QIP together with the other changes that Zond brings. That way there will be only one wallet address change.
 
 Note: Ideally, same change to encoding should be applied to the Transaction IDs as well (separate QIP can be created for that).
 
@@ -45,7 +47,18 @@ Would look like this (64 characters):
 1. `qyrdoywgudt9trqci6nm53gbyu4jddiud5ouqyarf57k7am5k9a6n3itqoja4pxe`
 2. `qyrroyprudrzytm96o9kzhjkp6xoiza7aqnprbhd6b9nibzuypfsn4y3u6hdoh8e`
 
-To summary, change is only in the representation of the address (described in [official docs](https://docs.theqrl.org/developers/address/)) to use (`q` + z-base-32 encoding) instead of (`Q` + base16 encoding).
+Note that with [QRL Zond](https://zond-docs.theqrl.org/wallet/node/node-cli-wallet) it seems that addresses will be shorter - still having `Q` followed by 42 hexadecimal characters (in docs is not yet reflected the `Q` prefix).
+
+Example Zond addresses (43 characters):
+
+1. `Q1005003ea6ed78d597e7411a8ddbc2dffd8839e5`
+2. `Q20bf1acdae054f4194e0c132b489e8f9099caf8c`
+
+Would look like this (34 characters):
+1. `qnynoyxig7ihpmf98erpe5s6n596aoqxf`
+2. `qrn9tiupqyi8wdf8yar3mjnxe9rr33mhc`
+
+To summary, change is only in the representation of the address (described in [official docs](https://docs.theqrl.org/developers/address/) for current version; for Zond is new wallet format not specified yet) to use (`q` + z-base-32 encoding) instead of (`Q` + base16 encoding).
 
 ### z-base-32
 The **[z-base-32](http://philzimmermann.com/docs/human-oriented-base-32-encoding.txt)** was created in 2002 as **human-oriented base-32 encoding**.
