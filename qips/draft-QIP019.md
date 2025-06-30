@@ -26,7 +26,7 @@ Because STOP is enforced during block validation, it is *transaction‑pool agno
 ## Motivation
 
 * **Predictability & safety**
-  Upcoming protocol‑level and contract‑level features (deterministic state channels, batch‑execution proofs, the Zond upgrade) rely on a predictable, verifiable transaction sequence. Arbitrary re‑ordering makes formal reasoning about state transitions intractable.
+  Upcoming protocol‑level and contract‑level features (the Zond upgrade) value a predictable, verifiable transaction sequence. Arbitrary re‑ordering makes formal reasoning about state transitions intractable.
 
 * **MEV reduction**
   Builders today shuffle transactions to extract value via sandwiching, back‑running, or gas‑price manipulation. Enforcing a canonical order (highest payer first, per‑account nonces respected) neutralises many of these opportunities while preserving fee‑based prioritisation.
