@@ -7,30 +7,35 @@ status: draft/incomplete
 comments_uri: ~
 created: 2025-05-30
 modified: 2025-06-30
----
+--------------------
 
 # Abstract
 
-This proposal introduces the **Stable Transaction Ordering Policy (STOP)**: a consensus-level rule that forces every block to list its transactions in a deterministic *nonce-price* order.
-For each sender, transactions **must** appear in strictly increasing `nonce` order; across different senders, the list **must** be globally sorted by **gas-price descending** (ties broken by sender address and nonce).
-Because STOP is enforced during block validation, it is *transaction-pool agnostic*: miners/validators may keep any mempool they like, but a block whose transaction array violates the ordering rule is invalid.
-The goal is to limit ad-hoc, potentially adversarial re-ordering at block construction time, reducing (not eliminating) systemic MEV surface area and preventing instability that can arise after a forthcoming smart-contract upgrade (Zond).
+The **Stable Transaction Ordering Policy (STOP)** introduces a consensus‑level rule that forces every block to list its transactions in a deterministic *nonce‑price* order.
+For each sender, transactions **must** appear in strictly increasing `nonce` order; across different senders, the list **must** be globally sorted by **gas‑price descending** (ties broken by sender address and nonce).
+
+By removing the builder’s freedom to permute included transactions, STOP simultaneously:
+
+* **Shrinks the MEV attack surface** — sandwiching and generalized frontrunning require flexible ordering; a fixed order makes many such strategies uneconomical.
+* **Reduces effective user‑to‑execution latency** — with ordering fixed, off‑chain “look‑ahead viewers” can forecast state changes in **milliseconds**, letting users and contracts react within the same 60‑second block interval.
+
+Because STOP is enforced during block validation, it is *transaction‑pool agnostic*; miners/validators may keep any mempool they like, but a block whose transaction array violates the rule is invalid.
 
 ---
 
 ## Motivation
 
-* **Predictability & safety.**
-  Upcoming protocol-level and contract-level features (e.g. deterministic state channels and batch execution proofs) rely on a predictable, verifiable transaction sequence inside each block. Unbounded re-ordering makes formal reasoning about state transitions intractable.
+* **Predictability & safety**
+  Upcoming protocol‑level and contract‑level features (deterministic state channels, batch‑execution proofs, the Zond upgrade) rely on a predictable, verifiable transaction sequence. Arbitrary re‑ordering makes formal reasoning about state transitions intractable.
 
-* **MEV reduction.**
-  Block producers can shuffle transactions to exploit price differences or execute sandwich attacks. Enforcing a canonical order (highest payer first, per-account nonces respected) neutralises many of these opportunities without harming fee-based prioritisation.
+* **MEV reduction**
+  Builders today shuffle transactions to extract value via sandwiching, back‑running, or gas‑price manipulation. Enforcing a canonical order (highest payer first, per‑account nonces respected) neutralises many of these opportunities while preserving fee‑based prioritisation.
 
-* **Implementation simplicity.**
-  STOP is a single, easily-checked invariant: *“Is the list sorted by (gasPrice↓, sender↑, nonce↑) and are nonces contiguous per sender?”* Validation adds < 1 µs on commodity hardware.
+* **Sub‑second interactivity**
+  With 60‑second block times, users often observe pending txs and broadcast responses. Deterministic ordering lets *look‑ahead viewers* calculate the exact post‑state **within milliseconds**, allowing contracts and traders to engage in multi‑step “conversations” inside a single block.
 
-* **Greater intra-block “conversation.”**
-  With 60-second block times, users often see pending transactions and race to respond before the block seals. Deterministic ordering guarantees that a follow-up transaction placed later in the interval will execute **after** the triggering transaction when both land in the same block, enabling richer back-and-forth workflows (e.g. rapid DEX hedging or oracle-mediated multi-party settlements).
+* **Implementation simplicity**
+  STOP is a single invariant — *“Is the list sorted by (gasPrice↓, sender↑, nonce↑) and are nonces contiguous per sender?”* — that costs < 1 µs to verify.
 
 ---
 
@@ -38,26 +43,26 @@ The goal is to limit ad-hoc, potentially adversarial re-ordering at block constr
 
 ### 1. Definitions
 
-| Symbol      | Meaning                                                                                          |
-| ----------- | ------------------------------------------------------------------------------------------------ |
-| `tx`        | A transaction object.                                                                            |
-| `addr(tx)`  | Sender address of `tx`.                                                                          |
-| `nonce(tx)` | Sender nonce in `tx`.                                                                            |
-| `price(tx)` | **Gas price** paid by `tx`. |
-| `T`         | Transaction list in a candidate block.                                                           |
+| Symbol      | Meaning                                |
+| ----------- | -------------------------------------- |
+| `tx`        | A transaction object.                  |
+| `addr(tx)`  | Sender address of `tx`.                |
+| `nonce(tx)` | Sender nonce in `tx`.                  |
+| `price(tx)` | **Gas price** paid by `tx`.            |
+| `T`         | Transaction list in a candidate block. |
 
 ### 2. Ordering predicate
 
 A block **MUST** satisfy **both** predicates:
 
-1. **Per-sender monotonicity**
+1. **Per‑sender monotonicity**
    For every sender `A`, and every pair of indices `i < j` such that `addr(T[i]) == addr(T[j]) == A`
 
    ```
    nonce(T[i]) + 1 == nonce(T[j])
    ```
 
-2. **Global nonce-price order**
+2. **Global nonce‑price order**
    For every pair of indices `i < j`:
 
    ```
@@ -68,79 +73,71 @@ A block **MUST** satisfy **both** predicates:
 
 ### 3. Consensus changes
 
-* **Block-validation rule** — starting at activation height **H\_STOP**, a block failing either predicate is **invalid**.
-* **No changes** to transaction format, gas accounting, or mempool behaviour are required.
+* **Block‑validation rule** — from activation height **H\_STOP** onward, a block failing either predicate is **invalid**.
+* No changes to transaction format, gas accounting, or mempool behaviour are required.
 
 ### 4. Activation
 
-Activation by hard fork at **block height NNNNNNN** (to be finalised during proposal/open). Clients must enable STOP rules for blocks ≥ `NNNNNNN`.
+Activation by hard fork at **block height NNNNNNN** (to be finalised during proposal/open). Clients must enable STOP rules for blocks ≥ `NNNNNNN`.
 
 ---
 
 ## Rationale
 
-* **Gas-price-first preserves fee incentives.**
-  Sorting primarily by `price` retains the “highest payer first” economic signal while making the ordering transparent.
+* **Gas‑price‑first preserves fee incentives** — highest payer still wins inclusion ordering.
+* **Nonce tie‑breaker avoids intra‑account deadlock** — per‑account semantics remain identical.
+* **Address tie‑breaker is deterministic & cheap** — lexicographic compare is free.
 
-* **Nonce tie-breaker avoids intra-account deadlock.**
-  Contiguous nonces keep per-account semantics identical to the status quo.
+### Rejected alternatives
 
-* **Address tie-breaker is deterministic and cheap.**
-  Lexicographic address order costs nothing to compute and prevents ambiguous ordering when two senders pay the same price.
-
-* **Rejected alternatives**
-
-  * *Timestamp-based ordering* — manipulable and non-deterministic across nodes.
-  * *Random shuffling* — removes MEV but destroys fee-priority guarantees.
-  * *Auction-style sequencing* — heavier consensus changes, introduces new attack surface.
+* *Timestamp‑based ordering* — manipulable, non‑deterministic.
+* *Random shuffling* — MEV‑proof but destroys fee prioritisation.
+* *Auction‑style sequencing* — heavy consensus churn, new attack surface.
 
 ---
 
-## Look-Ahead Viewers
+## Look‑Ahead Viewers (LAVs)
 
-“Look-Ahead Viewers” (LAVs) are off-chain simulators that attempt to preview the next block’s post-state before it is mined.
+LAVs are off‑chain simulators that forecast the next block’s post‑state:
 
-1. **Snapshot public mempool.**
-2. **Apply STOP ordering** to the snapshot.
-3. **Assume profit-maximising builder** who top-fills by gas price until the block-gas limit.
-4. **Execute the ordered list** against the current state to derive a candidate future state Σ<sub>t+1</sub>.
+1. **Snapshot** the public mempool.
+2. **Apply STOP ordering.**
+3. **Fill** up to the gas limit assuming a profit‑maximising builder.
+4. **Execute** to derive state Σ<sub>t+1</sub>.
 
-With STOP, the only uncertainty is whether a transaction is *included*; ordering is fixed. This collapses a factorial search space into independent yes/no decisions, giving LAVs far higher predictive accuracy.
+With ordering fixed, the only randomness is *inclusion*. This turns a factorial search into independent yes/no decisions, giving sub‑second forecasts rather than today’s hand‑wavy guesses.
 
 | Scenario                        | Forecast error |
 | ------------------------------- | -------------- |
 | Unbounded ordering (status quo) | Very high      |
 | STOP enforced                   | Low            |
-| Fully fixed block template      | Near-zero      |
+| Fully fixed block template      | Near‑zero      |
 
-LAVs enable:
+### Benefits unlocked by millisecond forecasts
 
-* **Risk management** — contracts can query imminent state to trigger pre-emptive safeguards.
-* **More efficient search** — arbitrageurs can evaluate profitability with fewer failed bundles.
-* **Formal verification** — provers can enumerate the small set of reachable post-states.
+* **Risk management** — contracts can self‑protect before the block closes.
+* **Efficient search** — arbitrageurs spend less gas on failed bundles.
+* **Rich intra‑block dialogues** — users & bots chain multiple moves inside one 60‑sec interval.
 
 ---
 
 ## Backward compatibility
 
-STOP is a **consensus-breaking** change: pre-fork blocks remain valid; post-fork blocks constructed by legacy nodes will be rejected.
+STOP is **consensus‑breaking**: pre‑fork blocks remain valid; post‑fork blocks built by legacy nodes are rejected.
 
-Mitigations:
-
-* Long notice period and test-net rollout.
-* Reference patches for major clients.
-* Blocks before `H_STOP` are **not** re-evaluated, preserving chain history.
+* Long notice period + test‑net rollout.
+* Reference client patches provided.
+* Blocks < `H_STOP` are not re‑evaluated.
 
 ---
 
 ## Reference implementation (pseudocode)
 
-```
+```python
 ValidateSTOP(txs, baseFee):
     effPrice(tx):
         if tx.type == DynamicFee:
-            cap = min(tx.maxFeePerGas, baseFee + tx.priorityFee)
-            return cap
+            return min(tx.maxFeePerGas, baseFee + tx.priorityFee)
         return tx.gasPrice
 
     lastPrice = None
@@ -152,7 +149,7 @@ ValidateSTOP(txs, baseFee):
         p = effPrice(tx)
 
         if idx > 0:
-            if p > lastPrice:                                   fail("gas price order")
+            if p > lastPrice:                                   fail("gas‑price order")
             if p == lastPrice and tx.addr < lastAddr:           fail("address order")
             if p == lastPrice and tx.addr == lastAddr and tx.nonce <= lastNonce:
                                                                fail("nonce order")
@@ -161,9 +158,8 @@ ValidateSTOP(txs, baseFee):
         lastAddr  = tx.addr
         lastNonce = tx.nonce
 
-        if tx.addr in seenNonce:
-            if tx.nonce != seenNonce[tx.addr] + 1:
-                fail("non-contiguous nonce")
+        if tx.addr in seenNonce and tx.nonce != seenNonce[tx.addr] + 1:
+            fail("non‑contiguous nonce")
         seenNonce[tx.addr] = tx.nonce
 ```
 
@@ -171,11 +167,11 @@ ValidateSTOP(txs, baseFee):
 
 ## Security Considerations
 
-| Threat                                     | Mitigation                                                                                                            |
-| ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
-| **Block-producer censorship via ordering** | Producers can still omit txs, but cannot rearrange those they include—removing many front-running & sandwich vectors. |
-| **Fee-spoof griefing**                     | Attackers broadcasting many max-price txs to dominate the list already exists; STOP does not worsen it.               |
-| **Consensus split risk**                   | Predicate is simple; extensive test vectors and cross-client test-suites will accompany implementation.               |
+| Threat                                | Mitigation                                                               |
+| ------------------------------------- | ------------------------------------------------------------------------ |
+| **Ordering‑based MEV & frontrunning** | Fixed order removes re‑shuffling leverage.                               |
+| **Fee‑spoof griefing**                | Existing risk; not worsened.                                             |
+| **Consensus split risk**              | Predicate is trivial to cross‑implement; extensive test vectors planned. |
 
 ---
 
