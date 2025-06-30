@@ -4,7 +4,7 @@ title: Stable Transaction Ordering Policy (STOP)
 author: Elliott G. Dehnbostel (@quanta-swap)
 layer: core
 status: draft/incomplete
-comments\_uri: \~
+comments_uri: ~
 created: 2025-05-30
 modified: 2025-06-30
 ---
