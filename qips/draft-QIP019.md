@@ -131,40 +131,6 @@ STOP is **consensus‑breaking**: pre‑fork blocks remain valid; post‑fork bl
 
 ---
 
-## Reference implementation (pseudocode)
-
-```python
-ValidateSTOP(txs, baseFee):
-    effPrice(tx):
-        if tx.type == DynamicFee:
-            return min(tx.maxFeePerGas, baseFee + tx.priorityFee)
-        return tx.gasPrice
-
-    lastPrice = None
-    lastAddr  = None
-    lastNonce = 0
-    seenNonce = {}
-
-    for idx, tx in enumerate(txs):
-        p = effPrice(tx)
-
-        if idx > 0:
-            if p > lastPrice:                                   fail("gas‑price order")
-            if p == lastPrice and tx.addr < lastAddr:           fail("address order")
-            if p == lastPrice and tx.addr == lastAddr and tx.nonce <= lastNonce:
-                                                               fail("nonce order")
-
-        lastPrice = p
-        lastAddr  = tx.addr
-        lastNonce = tx.nonce
-
-        if tx.addr in seenNonce and tx.nonce != seenNonce[tx.addr] + 1:
-            fail("non‑contiguous nonce")
-        seenNonce[tx.addr] = tx.nonce
-```
-
----
-
 ## Security Considerations
 
 | Threat                                | Mitigation                                                               |
